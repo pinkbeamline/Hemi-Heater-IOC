@@ -1,0 +1,25 @@
+record(calc, "$(BL):$(DEV):Temp_RBV"){
+  field(INPA, "$(BL):$(DEV):Temp CPP")
+  field(CALC, "A/10")
+  field(PREC, "1")
+  field(EGU, "℃")
+}
+
+record(calc, "$(BL):$(DEV):SetPoint_RBV2"){
+  field(INPA, "$(BL):$(DEV):SetPoint_RBV CPP")
+  field(CALC, "A/10")
+  field(PREC, "1")
+  field(EGU, "℃")
+}
+
+record(ao, "$(BL):$(DEV):SetPoint_inp"){
+  field(PREC, "1")
+  field(EGU, "℃")
+}
+
+record(calcout, "$(BL):$(DEV):SetPoint_calc"){
+  field(INPA, "$(BL):$(DEV):SetPoint_inp CPP")
+  field(OOPT, "When Non-zero")
+  field(CALC, "A*10")
+  field(OUT, "$(BL):$(DEV):SetPoint PP")
+}
