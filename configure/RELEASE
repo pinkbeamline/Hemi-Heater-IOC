@@ -27,6 +27,7 @@ SUPPORT=/home/epics/EPICS/support
 ASYN=$(SUPPORT)/asyn
 MODBUS=$(SUPPORT)/modbus-R2-11
 CALC=$(SUPPORT)/calc-R3-7-3
+AUTOSAVE=$(SUPPORT)/autosave
 
 # If using the sequencer, point SNCSEQ at its top directory:
 #SNCSEQ = $(MODULES)/seq-ver

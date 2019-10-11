@@ -1,0 +1,3 @@
+file hemi_settings.req BL=PINK,DEV=HEMI1
+file hemi_settings.req BL=PINK,DEV=HEMI2
+file hemi_settings.req BL=PINK,DEV=HEMI3

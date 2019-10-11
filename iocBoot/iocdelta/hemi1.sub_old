@@ -1,0 +1,37 @@
+#################################
+# Input Records
+#################################
+
+file "$(MODBUS)/db/longin.template" { pattern
+{    P,  R,                        PORT,  OFFSET,        SCAN}
+{PINK:,  HEMI1:Temp,          HM1_RWord,       0,  "I/O Intr"}
+{PINK:,  HEMI1:SetPoint_RBV,  HM1_RWord,       1,  "I/O Intr"}
+}
+
+file "$(MODBUS)/db/bi_word.template" { pattern
+{    P,  R,                           PORT,  OFFSET,    MASK,  ZNAM,  ONAM,       ZSV,       OSV,       SCAN}
+{PINK:,  HEMI1:AT_led,        HM1_RBinary1,       0,  0x0001,   Off,    On,  NO_ALARM,  NO_ALARM, "I/O Intr"}
+{PINK:,  HEMI1:OUT1_led,      HM1_RBinary1,       1,  0x0001,   Off,    On,  NO_ALARM,  NO_ALARM, "I/O Intr"}
+{PINK:,  HEMI1:AT_RBV,        HM1_RBinary2,       0,  0x0001,   Off,    On,  NO_ALARM,  NO_ALARM, "I/O Intr"}
+{PINK:,  HEMI1:Run_RBV,       HM1_RBinary2,       1,  0x0001,  Stop,   Run,  NO_ALARM,  NO_ALARM, "I/O Intr"}
+}
+
+#################################
+# Output Records
+#################################
+
+file "$(MODBUS)/db/longout.template" { pattern
+{    P,  R,                       PORT,  OFFSET}
+{PINK:,  HEMI1:SetPoint,     HM1_WWord,       0}
+}
+
+file "$(MODBUS)/db/bo_word.template" { pattern
+{    P,  R,                           PORT,  OFFSET,    MASK,  ZNAM,  ONAM}
+{PINK:,  HEMI1:AT,            HM1_WBinary1,       0,  0xFF00,   Off,    On}
+{PINK:,  HEMI1:Run,           HM1_WBinary2,       0,  0xFF00,  Stop,   Run}
+}
+
+file "$(TOP)/db/hemi.db" { pattern
+{  BL,   DEV}
+{PINK, HEMI1}
+}

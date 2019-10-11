@@ -1,0 +1,11 @@
+record(ao, "$(BL):$(DEV):$(R)"){
+  field(PREC, "1")
+  field(EGU, "℃")
+}
+
+record(calcout, "$(BL):$(DEV):$(R)_calc"){
+  field(INPA, "$(BL):$(DEV):$(R) CPP")
+##  field(OOPT, "When Non-zero")
+  field(CALC, "FLOOR(A*10)")
+  field(OUT, "$(BL):$(DEV):$(ROUT) PP")
+}

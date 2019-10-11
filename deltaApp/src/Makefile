@@ -20,11 +20,13 @@ delta_DBD += asyn.dbd
 delta_DBD += drvAsynIPPort.dbd
 delta_DBD += modbusSupport.dbd
 delta_DBD += calc.dbd
+delta_DBD += asSupport.dbd
 
 # Add all the support libraries needed by this IOC
 delta_LIBS += asyn
 delta_LIBS += modbus
 delta_LIBS += calc
+delta_LIBS += autosave
 
 # delta_registerRecordDeviceDriver.cpp derives from delta.dbd
 delta_SRCS += delta_registerRecordDeviceDriver.cpp

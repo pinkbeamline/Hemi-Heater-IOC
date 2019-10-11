@@ -3,9 +3,37 @@
 #################################
 
 file "$(MODBUS)/db/longin.template" { pattern
-{    P,  R,                        PORT,  OFFSET,        SCAN}
-{PINK:,  HEMI1:Temp,          HM1_RWord,       0,  "I/O Intr"}
-{PINK:,  HEMI1:SetPoint_RBV,  HM1_RWord,       1,  "I/O Intr"}
+{    P,  R,                              PORT,  OFFSET,        SCAN}
+{PINK:,  HEMI1:Temp_raw,            HM1_RWord,       0,  "I/O Intr"}
+{PINK:,  HEMI1:SetPoint_raw,        HM1_RWord,       1,  "I/O Intr"}
+{PINK:,  HEMI1:SensorType_raw,      HM1_RWord,       4,  "I/O Intr"}
+{PINK:,  HEMI1:ControlMethod_raw,   HM1_RWord,       5,  "I/O Intr"}
+{PINK:,  HEMI1:StartPatterNum_RBV, HM1_RWord2,       0,  "I/O Intr"}
+{PINK:,  HEMI1:TimeLeftSec,        HM1_RWord2,       2,  "I/O Intr"}
+{PINK:,  HEMI1:TimeLeftMin,        HM1_RWord2,       3,  "I/O Intr"}
+{PINK:,  HEMI1:StepNumber_RBV,     HM1_RWord2,       4,  "I/O Intr"}
+{PINK:,  HEMI1:PatternNumber_RBV,  HM1_RWord2,       5,  "I/O Intr"}
+{PINK:,  HEMI1:DynamicSet_raw,     HM1_RWord2,       6,  "I/O Intr"}
+{PINK:,  HEMI1:PB_RBV,             HM1_RWord3,       0,  "I/O Intr"}
+{PINK:,  HEMI1:Ti_RBV,             HM1_RWord3,       1,  "I/O Intr"}
+{PINK:,  HEMI1:Td_RBV,             HM1_RWord3,       2,  "I/O Intr"}
+{PINK:,  HEMI1:Integration_RBV,    HM1_RWord3,       3,  "I/O Intr"}
+{PINK:,  HEMI1:P1SetPoint0_raw,    HM1_RWord7,       0,  "I/O Intr"}
+{PINK:,  HEMI1:P1SetPoint1_raw,    HM1_RWord7,       1,  "I/O Intr"}
+{PINK:,  HEMI1:P1SetPoint2_raw,    HM1_RWord7,       2,  "I/O Intr"}
+{PINK:,  HEMI1:P1SetPoint3_raw,    HM1_RWord7,       3,  "I/O Intr"}
+{PINK:,  HEMI1:P1SetPoint4_raw,    HM1_RWord7,       4,  "I/O Intr"}
+{PINK:,  HEMI1:P1SetPoint5_raw,    HM1_RWord7,       5,  "I/O Intr"}
+{PINK:,  HEMI1:P1SetPoint6_raw,    HM1_RWord7,       6,  "I/O Intr"}
+{PINK:,  HEMI1:P1SetPoint7_raw,    HM1_RWord7,       7,  "I/O Intr"}
+{PINK:,  HEMI1:P1time0_raw,        HM1_RWord8,       0,  "I/O Intr"}
+{PINK:,  HEMI1:P1time1_raw,        HM1_RWord8,       1,  "I/O Intr"}
+{PINK:,  HEMI1:P1time2_raw,        HM1_RWord8,       2,  "I/O Intr"}
+{PINK:,  HEMI1:P1time3_raw,        HM1_RWord8,       3,  "I/O Intr"}
+{PINK:,  HEMI1:P1time4_raw,        HM1_RWord8,       4,  "I/O Intr"}
+{PINK:,  HEMI1:P1time5_raw,        HM1_RWord8,       5,  "I/O Intr"}
+{PINK:,  HEMI1:P1time6_raw,        HM1_RWord8,       6,  "I/O Intr"}
+{PINK:,  HEMI1:P1time7_raw,        HM1_RWord8,       7,  "I/O Intr"}
 }
 
 file "$(MODBUS)/db/bi_word.template" { pattern
@@ -21,8 +49,33 @@ file "$(MODBUS)/db/bi_word.template" { pattern
 #################################
 
 file "$(MODBUS)/db/longout.template" { pattern
-{    P,  R,                       PORT,  OFFSET}
-{PINK:,  HEMI1:SetPoint,     HM1_WWord,       0}
+{    P,  R,                                PORT,  OFFSET}
+{PINK:,  HEMI1:SetPoint_setraw,       HM1_WWord,       0}
+{PINK:,  HEMI1:SensorType_set,       HM1_WWord1,       0}
+{PINK:,  HEMI1:ControlMethod_set,    HM1_WWord2,       0}
+
+
+{PINK:,  HEMI1:PB,                 HM1_WWord_pb,       0}
+{PINK:,  HEMI1:Ti,                 HM1_WWord_ti,       0}
+{PINK:,  HEMI1:Td,                 HM1_WWord_td,       0}
+{PINK:,  HEMI1:Integration,       HM1_WWord_int,       0}
+
+{PINK:,  HEMI1:P1SetPoint0_setraw, HM1_WWordSP0,       0}
+{PINK:,  HEMI1:P1SetPoint1_setraw, HM1_WWordSP1,       0}
+{PINK:,  HEMI1:P1SetPoint2_setraw, HM1_WWordSP2,       0}
+{PINK:,  HEMI1:P1SetPoint3_setraw, HM1_WWordSP3,       0}
+{PINK:,  HEMI1:P1SetPoint4_setraw, HM1_WWordSP4,       0}
+{PINK:,  HEMI1:P1SetPoint5_setraw, HM1_WWordSP5,       0}
+{PINK:,  HEMI1:P1SetPoint6_setraw, HM1_WWordSP6,       0}
+{PINK:,  HEMI1:P1SetPoint7_setraw, HM1_WWordSP7,       0}
+{PINK:,  HEMI1:P1time0_setraw,      HM1_WWordT0,       0}
+{PINK:,  HEMI1:P1time1_setraw,      HM1_WWordT1,       0}
+{PINK:,  HEMI1:P1time2_setraw,      HM1_WWordT2,       0}
+{PINK:,  HEMI1:P1time3_setraw,      HM1_WWordT3,       0}
+{PINK:,  HEMI1:P1time4_setraw,      HM1_WWordT4,       0}
+{PINK:,  HEMI1:P1time5_setraw,      HM1_WWordT5,       0}
+{PINK:,  HEMI1:P1time6_setraw,      HM1_WWordT6,       0}
+{PINK:,  HEMI1:P1time7_setraw,      HM1_WWordT7,       0}
 }
 
 file "$(MODBUS)/db/bo_word.template" { pattern
@@ -34,4 +87,32 @@ file "$(MODBUS)/db/bo_word.template" { pattern
 file "$(TOP)/db/hemi.db" { pattern
 {  BL,   DEV}
 {PINK, HEMI1}
+}
+
+### Convertion Records
+file "$(TOP)/db/temp2word.db" { pattern
+{  BL,   DEV,             R,                 ROUT}
+{PINK, HEMI1,      SetPoint,      SetPoint_setraw}
+{PINK, HEMI1,   P1SetPoint0,   P1SetPoint0_setraw}
+{PINK, HEMI1,   P1SetPoint1,   P1SetPoint1_setraw}
+{PINK, HEMI1,   P1SetPoint2,   P1SetPoint2_setraw}
+{PINK, HEMI1,   P1SetPoint3,   P1SetPoint3_setraw}
+{PINK, HEMI1,   P1SetPoint4,   P1SetPoint4_setraw}
+{PINK, HEMI1,   P1SetPoint5,   P1SetPoint5_setraw}
+{PINK, HEMI1,   P1SetPoint6,   P1SetPoint6_setraw}
+{PINK, HEMI1,   P1SetPoint7,   P1SetPoint7_setraw}
+}
+
+file "$(TOP)/db/word2temp.db" { pattern
+{  BL,   DEV,                 R,                RINP}
+{PINK, HEMI1,          Temp_RBV,            Temp_raw}
+{PINK, HEMI1,    DynamicSet_RBV,      DynamicSet_raw}
+{PINK, HEMI1,   P1SetPoint0_RBV,     P1SetPoint0_raw}
+{PINK, HEMI1,   P1SetPoint1_RBV,     P1SetPoint1_raw}
+{PINK, HEMI1,   P1SetPoint2_RBV,     P1SetPoint2_raw}
+{PINK, HEMI1,   P1SetPoint3_RBV,     P1SetPoint3_raw}
+{PINK, HEMI1,   P1SetPoint4_RBV,     P1SetPoint4_raw}
+{PINK, HEMI1,   P1SetPoint5_RBV,     P1SetPoint5_raw}
+{PINK, HEMI1,   P1SetPoint6_RBV,     P1SetPoint6_raw}
+{PINK, HEMI1,   P1SetPoint7_RBV,     P1SetPoint7_raw}
 }
