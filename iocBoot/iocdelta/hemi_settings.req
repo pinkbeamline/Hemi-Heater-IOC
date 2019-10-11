@@ -1,0 +1,9 @@
+$(BL):$(DEV):SetPoint
+$(BL):$(DEV):P1SetPoint0
+$(BL):$(DEV):P1SetPoint1
+$(BL):$(DEV):P1SetPoint2
+$(BL):$(DEV):P1SetPoint3
+$(BL):$(DEV):P1SetPoint4
+$(BL):$(DEV):P1SetPoint5
+$(BL):$(DEV):P1SetPoint6
+$(BL):$(DEV):P1SetPoint7

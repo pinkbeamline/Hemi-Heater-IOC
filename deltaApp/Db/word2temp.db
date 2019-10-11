@@ -1,0 +1,6 @@
+record(calc, "$(BL):$(DEV):$(R)"){
+  field(INPA, "$(BL):$(DEV):$(RINP) CPP")
+  field(CALC, "A/10")
+  field(PREC, "1")
+  field(EGU, "℃")
+}

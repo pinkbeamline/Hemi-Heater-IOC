@@ -53,7 +53,7 @@ drvModbusAsynConfigure( "HM2_RBinary2",          "HM",            2,            
 drvModbusAsynConfigure( "HM2_WBinary1",          "HM",            2,              5,             0x0813,           16,        0,        0, "Hemi-Delta")
 drvModbusAsynConfigure( "HM2_WBinary2",          "HM",            2,              5,             0x0814,           16,        0,        0, "Hemi-Delta")
 ## Heater 3
-drvModbusAsynConfigure(    "HM3_RWord",          "HM",            3,              3,             0x1000,            2,        0,     1000, "Hemi-Delta")
+drvModbusAsynConfigure(    "HM3_RWord",          "HM",            3,              3,             0x1000,            8,        0,     1000, "Hemi-Delta")
 drvModbusAsynConfigure(    "HM3_WWord",          "HM",            3,              6,             0x1001,            1,        0,        0, "Hemi-Delta")
 drvModbusAsynConfigure( "HM3_RBinary1",          "HM",            3,              2,             0x0800,            8,        0,     1000, "Hemi-Delta")
 drvModbusAsynConfigure( "HM3_RBinary2",          "HM",            3,              2,             0x0813,            8,        0,     1000, "Hemi-Delta")
@@ -68,8 +68,8 @@ dbLoadRecords("$(ASYN)/db/asynRecord.db","P=PINK:HEMI:,R=asyn,PORT=HM,ADDR=0,OMA
 
 cd "${TOP}/iocBoot/${IOC}"
 
-dbLoadTemplate("hemi1.substitutions")
-dbLoadTemplate("hemi2.substitutions")
+#dbLoadTemplate("hemi1.substitutions")
+##dbLoadTemplate("hemi2.substitutions")
 dbLoadTemplate("hemi3.substitutions")
 
 iocInit
