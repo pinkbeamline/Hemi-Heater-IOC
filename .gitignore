@@ -10,4 +10,5 @@ include/
 lib/
 templates/
 envPaths
-
+iocBoot/*
+**/autosave
